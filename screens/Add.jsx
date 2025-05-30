@@ -18,7 +18,7 @@ export default function AddScreen() {
 
   function handlePress() {
     if (title.trim() === '') {
-      alert('Please add a title.');
+      navigation.goBack();
       return;
     }
 

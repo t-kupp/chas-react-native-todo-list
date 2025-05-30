@@ -17,7 +17,7 @@ export default function DetailsScreen({ route }) {
 
   return (
     <View style={{ alignItems: 'center', marginTop: 32 }}>
-      <Text>{item.description}</Text>
+      <Text style={{ textAlign: 'center' }}>{item.description}</Text>
       <TouchableOpacity onPress={handlePress}>
         <Text
           style={{

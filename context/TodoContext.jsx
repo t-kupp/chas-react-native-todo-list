@@ -25,10 +25,8 @@ export default function TodoContextProvider({ children }) {
   }
 
   function toggleIsDone(todo) {
-    // Add todo item to finished tasks
     setFinishedTodo((prev) => [...prev, todo]);
 
-    // Remove todo item from todo list
     const newTodoList = todoList.filter((item) => item.id !== todo.id);
     setTodoList(newTodoList);
   }

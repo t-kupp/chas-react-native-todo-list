@@ -1,4 +1,4 @@
-import { View, Text, Button, TextInput, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
+import { View, Text, Button, TextInput, StyleSheet, TouchableOpacity, FlatList, SectionList } from 'react-native';
 import { useTodo } from '../context/TodoContext';
 import { Entypo } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
@@ -40,11 +40,20 @@ export default function HomeScreen() {
       </View>
       <View>
         <Text style={{ textAlign: 'center', marginTop: 32, marginBottom: 8 }}>Finished Tasks</Text>
-        <FlatList
+        {/* <FlatList
           style={styles.list}
           data={finishedTodo}
           renderItem={({ item }) => <FinishedTodoItem item={item} />}
           keyExtractor={(item) => item.id}
+        /> */}
+        <SectionList
+          sections={[
+            {
+              data: finishedTodo,
+            },
+          ]}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => <FinishedTodoItem item={item} />}
         />
       </View>
     </View>

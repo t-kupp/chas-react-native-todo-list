@@ -21,8 +21,11 @@ export default function App() {
               headerRight: () => <Button title='Add' onPress={() => navigation.navigate('Add')} />,
             })}
           />
-          <Stack.Screen name='Add' options={{ title: 'Add Todo Item' }} component={AddScreen} />
+          {/* <Stack.Screen name='Add' options={{ title: 'Add Todo Item' }} component={AddScreen} /> */}
           <Stack.Screen name='Details' component={DetailsScreen} />
+          <Stack.Group screenOptions={{ presentation: 'modal' }}>
+            <Stack.Screen name='Add' options={{ title: 'Add Todo Item' }} component={AddScreen} />
+          </Stack.Group>
         </Stack.Navigator>
       </NavigationContainer>
     </TodoContextProvider>
